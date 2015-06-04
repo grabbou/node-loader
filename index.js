@@ -3,6 +3,6 @@
 	Author Tobias Koppers @sokra
 */
 module.exports = function() {
-	return "try {process.dlopen(" + JSON.stringify(this.resourcePath) + ", module.exports); } catch(e) {" +
+	return "try {process.dlopen(module, " + JSON.stringify(this.resourcePath) + "); } catch(e) {" +
 		"throw new Error('Cannot open ' + " + JSON.stringify(this.resourcePath) + " + ': ' + e);}";
 }
